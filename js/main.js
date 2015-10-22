@@ -2,23 +2,23 @@ $(document).ready(function(){
 
   accessToken = '1817903308.61dc8e8.b3b9467450fd463d980a15132803f463';
 
-    // getUserFeed('2135964523');
+    //getUserFeed('2135964523');
 
-    getUserRecent('2135964523');
+    //getUserRecent('2135964523');
 
     //getMyFeed();
 
-    // getCommentsByPhoto('448979387270691659_45818965');
+     //getCommentsByPhoto('448979387270691659_45818965');
 
-    // getFollows('1817903308');
+     //getFollows('1817903308');
 
-    // getFollowedBy('5320915');
+    //getFollowedBy('5320915');
 
-    // getRecentTag ('ux');
+    //getRecentTag ('ux');
 
     // getSearchTags ('userexperience');
 
-    // getLikesByPhoto ('448979387270691659_45818965');
+     getLikesByPhoto ('448979387270691659_45818965');
 
 
 function getUserFeed(user_id) {
@@ -70,10 +70,10 @@ function getUserRecent(user_id) {
       type: 'GET',
       data: {access_token: accessToken},
       success: function(data){
-        var data = JSON.stringify(data.data);
-        var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
-        window.open(url, '_blank');
-        window.focus();
+        // var data = JSON.stringify(data.data);
+        // var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
+        // window.open(url, '_blank');
+        // window.focus();
           var html = '';
           var owlObj = {};
 
@@ -181,6 +181,10 @@ function getLikesByPhoto (photo_id) {
         type: 'GET',
         data: {access_token: accessToken},
         success: function(data) {
+          var data = JSON.stringify(data.data);
+          var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
+          window.open(url, '_blank');
+          window.focus();
          for(x in data.data){
             $('.likes').append('<li>"'+data.data[x].full_name+'"</li>');  
           }
