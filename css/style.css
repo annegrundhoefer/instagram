@@ -1,0 +1,16 @@
+html body .image {
+	overflow: hidden;
+	width: 100%;
+	height: 300px;
+	opacity: 0.5;
+}
+
+
+
+html body .image img {
+	width: 100%;
+}
+
+html body .owl-pagination {
+	display: none;
+}
